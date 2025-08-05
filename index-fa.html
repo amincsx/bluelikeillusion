@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بلولایک ایلوژن - خانه</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body, .content { direction: rtl; }
+    .about-btn { font-family: inherit; }
+    h1 { font-family: inherit; }
+  </style>
+</head>
+<body>
+  <div class="language-selector">
+    <select id="langSelect">
+      <option value="fa">فارسی</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+  <div class="video-backgroundone">
+    <video autoplay loop muted playsinline id="bgVideo">
+      <source src="animations/firstpage1.mp4" type="video/mp4">
+      مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+    </video>
+    <div class="overlay"></div>
+  </div>
+  <div class="content">
+    <a href="explore-fa.html" class="about-btn" id="explore-btn">شروع </a>
+    <h1 lang="fa">بلولایک ایلوژن</h1>
+  </div>
+  <script src="overlay-effect.js"></script>
+  <script>
+    // Set selector value based on current page
+    document.getElementById('langSelect').value = window.location.pathname.includes('-fa') ? 'fa' : 'en';
+    // Language switcher
+    document.getElementById('langSelect').addEventListener('change', function() {
+      if (this.value === 'en') {
+        window.location.href = 'index.html';
+      } else {
+        window.location.href = 'index-fa.html';
+      }
+    });
+  </script>
+</body>
+</html> 

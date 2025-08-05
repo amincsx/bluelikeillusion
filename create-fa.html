@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ساخت وبسایت شما - بلولایک ایلوژن</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>body, .create-form-container { direction: rtl; }</style>
+</head>
+<body>
+  <div class="video-background">
+    <video autoplay loop muted playsinline id="bgVideo">
+      <source src="animations/bluelikeillusion animation.mp4" type="video/mp4">
+      مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+    </video>
+    <div class="overlay"></div>
+  </div>
+
+  <nav class="explore-nav">
+    <a href="index-fa.html" class="small-logo">بلولایک ایلوژن</a>
+    <div class="nav-links">
+      <a href="explore-fa.html" class="small-logo">بازگشت به اکسپلور</a>
+    </div>
+  </nav>
+
+  <div class="create-form-container">
+    <form class="create-form" id="websiteForm">
+      <h2>وبسایتتو بسازیم</h2>
+      <div class="form-group">
+        <label for="projectName">نام پروژه</label>
+        <input type="text" id="projectName" name="projectName" required placeholder="نام وبسایت شما">
+      </div>
+      <div class="form-group">
+        <label for="businessType">نوع کسب‌وکار/پروژه</label>
+        <select id="businessType" name="businessType" required>
+          <option value="">انتخاب نوع</option>
+          <option value="business">وبسایت شرکتی</option>
+          <option value="portfolio">نمونه‌کار</option>
+          <option value="ecommerce">فروشگاهی</option>
+          <option value="blog">وبلاگ</option>
+          <option value="other">سایر</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">توضیحات پروژه</label>
+        <textarea id="description" name="description" required placeholder="یکم از پروژه بگو..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>ترجیح طراحی</label>
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="preferences" value="minimal">
+            مینیمال
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="preferences" value="modern">
+            مدرن
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="preferences" value="colorful">
+            رنگارنگ
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="preferences" value="dark">
+            تیره
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">ایمیل تماس</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">شماره تماس</label>
+        <input type="tel" id="phone" name="phone" required placeholder="شماره تماس شما">
+      </div>
+      <button type="submit" class="submit-btn">تایید</button>
+    </form>
+  </div>
+
+  <div class="success-popup" id="successPopup">
+    <h3>متشکریم!</h3>
+    <p>به زودی با شما تماس خواهیم گرفت ❤️</p>
+  </div>
+
+  <script>
+    document.getElementById('websiteForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const formObject = {};
+      
+      // Convert FormData to object
+      formData.forEach((value, key) => {
+        if (key === 'preferences') {
+          if (!formObject[key]) {
+            formObject[key] = [];
+          }
+          formObject[key].push(value);
+        } else {
+          formObject[key] = value;
+        }
+      });
+      
+      // Show loading state
+      const submitBtn = this.querySelector('.submit-btn');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'در حال ارسال...';
+      submitBtn.disabled = true;
+      
+      try {
+        // Send data to our Vercel function
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formObject)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+          // Success - show popup
+          const popup = document.getElementById('successPopup');
+          popup.classList.add('show');
+          
+          // Reset form
+          this.reset();
+          
+          // Hide popup and redirect after 3 seconds
+          setTimeout(() => {
+            popup.classList.remove('show');
+            setTimeout(() => {
+              window.location.href = 'explore-fa.html';
+            }, 500);
+          }, 3000);
+        } else {
+          // Error handling
+          alert('خطا: ' + (result.error || 'مشکلی پیش آمد'));
+        }
+        
+      } catch (error) {
+        console.error('Error:', error);
+        alert('خطای شبکه. لطفا دوباره تلاش کنید.');
+      } finally {
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+  <script src="explore-overlay.js"></script>
+</body>
+</html>
