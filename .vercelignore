@@ -2,5 +2,14 @@
 bluelike illusion project/
 bluelike illusion project/**
 
+# Ignore heavy source project files, keep exported videos
+blender file/*.blend
+blender file/*.blend1
+
+# Ignore After Effects project files and autosaves
+**/*.aep
+**/Adobe After Effects Auto-Save/**
+**/text.aep Logs/**
+
 
 
