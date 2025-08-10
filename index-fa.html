@@ -3,44 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بلولایک ایلوژن - خانه</title>
+  <title>بلولایک ایلوژن - راهکارهای دیجیتال</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    body, .content { direction: rtl; }
-    .about-btn { font-family: inherit; }
-    h1 { font-family: inherit; }
+    body, main, .explore-content { direction: rtl; }
   </style>
 </head>
 <body>
+  <div class="video-background">
+    <video autoplay loop muted playsinline id="bgVideo">
+      <source src="animations/bluelikeillusion animation.mp4" type="video/mp4">
+      مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+    </video>
+    <div class="overlay"></div>
+  </div>
+
+  <nav class="explore-nav">
+    <div class="logo-container">
+      <a href="index-fa.html" class="small-logo">بلولایک ایلوژن</a>
+             <video class="logo-animation" muted playsinline>
+         
+         <source src="blender file/1h2640060-0130.mp4" type="video/mp4">
+         مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+       </video>
+    </div>
+    <div class="nav-links">
+      <a href="services-fa.html">خدمات</a>
+      <a href="about-fa.html">درباره ما</a>
+      <a href="contact-fa.html">تماس</a>
+    </div>
+  </nav>
+  
   <div class="language-selector">
     <select id="langSelect">
       <option value="fa">فارسی</option>
       <option value="en">English</option>
     </select>
   </div>
-  <div class="video-backgroundone">
-    <video autoplay loop muted playsinline id="bgVideo">
-      <source src="animations/firstpage1.mp4" type="video/mp4">
-      مرورگر شما از ویدیو پشتیبانی نمی‌کند.
-    </video>
-    <div class="overlay"></div>
+
+  <main class="explore-content">
+    <section id="hero" class="hero-section">
+      <h1>خلق برتری دیجیتال</h1>
+      <p class="tagline">توسعه وب • اپلیکیشن موبایل • راهکارهای دیجیتال</p>
+    </section>
+
+    <section id="services" class="services-section">
+      <h2>خدمات ما</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>توسعه وب</h3>
+          <p>وبسایت‌ها و اپلیکیشن‌های سفارشی و فروشگاهی با جدیدترین تکنولوژی‌ها</p>
+        </div>
+        <div class="service-card">
+          <h3>اپلیکیشن موبایل</h3>
+          <p>اپلیکیشن‌های موبایل بومی و کراس پلتفرم با تجربه کاربری عالی</p>
+        </div>
+        <div class="service-card">
+          <h3>طراحی UI/UX</h3>
+          <p>رابط کاربری زیبا و کاربرپسند برای افزایش تعامل و تبدیل</p>
+        </div>
+        <div class="service-card">
+          <h3>استراتژی دیجیتال</h3>
+          <p>برنامه‌ریزی و مشاوره برای رشد حضور دیجیتال شما</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2>درباره ما</h2>
+      <p>بلولایک ایلوژن یک آژانس دیجیتال پیشرو است که در خلق راهکارهای نوآورانه وب و موبایل تخصص دارد. تیم ما با ترکیب خلاقیت و تخصص فنی، نتایج برجسته‌ای ارائه می‌دهد.</p>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+      <h2>نمونه کارها</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="portfolio-content">
+            <h3>پلتفرم فروشگاهی</h3>
+            <p>تجربه خرید سفارشی با امکانات پیشرفته</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-content">
+            <h3>اپلیکیشن تناسب اندام</h3>
+            <p>اپلیکیشن موبایل کراس پلتفرم</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-content">
+            <h3>وبسایت شرکتی</h3>
+            <p>حضور مدرن برای برندهای پیشرو</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>ارتباط با ما</h2>
+      <div class="contact-content">
+        <p>آماده شروع پروژه هستید؟ بیایید با هم چیزی شگفت‌انگیز خلق کنیم.</p>
+        <a href="mailto:bluelikeillusion@gmail.com" class="contact-btn">تماس با ما</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="animated-text-container" id="delayed-text">
+    <p class="animated-textfa">بزن بریم <a href="create-fa.html" class="create-link">بسازیم</a> وب سایتتو</p>
   </div>
-  <div class="content">
-    <a href="explore-fa.html" class="about-btn" id="explore-btn">شروع </a>
-    <h1 lang="fa">بلولایک ایلوژن</h1>
-  </div>
-  <script src="overlay-effect.js"></script>
+
+  <footer class="explore-footer">
+    <p>© ۲۰۲۴ بلولایک ایلوژن. همه حقوق محفوظ است.</p>
+  </footer>
+ 
   <script>
-    // Set selector value based on current page
-    document.getElementById('langSelect').value = window.location.pathname.includes('-fa') ? 'fa' : 'en';
-    // Language switcher
-    document.getElementById('langSelect').addEventListener('change', function() {
-      if (this.value === 'en') {
-        window.location.href = 'index.html';
-      } else {
-        window.location.href = 'index-fa.html';
+    document.addEventListener('DOMContentLoaded', function() {
+      // Logo animation hover functionality (play once fully on hover)
+      const logoContainer = document.querySelector('.logo-container');
+      const logoAnimation = document.querySelector('.logo-animation');
+      
+      if (logoContainer && logoAnimation) {
+        logoAnimation.loop = false;
+        let isPlaying = false;
+
+        const triggerPlay = () => {
+          if (isPlaying) return;
+          isPlaying = true;
+          logoAnimation.currentTime = 0;
+          logoAnimation.play();
+        };
+
+        logoContainer.addEventListener('mouseenter', triggerPlay);
+        logoContainer.addEventListener('click', triggerPlay);
+
+        logoAnimation.addEventListener('ended', () => {
+          logoAnimation.pause();
+          logoAnimation.currentTime = 0;
+          isPlaying = false;
+        });
+      }
+      
+      // Delayed text animation
+      const delayedText = document.getElementById('delayed-text');
+      if (delayedText) {
+        setTimeout(() => {
+          delayedText.style.visibility = 'visible';
+        }, 1000);
       }
     });
   </script>
+  <script src="common.js"></script>
 </body>
 </html> 

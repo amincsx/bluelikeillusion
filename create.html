@@ -16,9 +16,8 @@
   </div>
 
   <nav class="explore-nav">
-    <a href="index.html" class="small-logo">Bluelike Illusion</a>
     <div class="nav-links">
-      <a href="explore.html" class="small-logo">Back to Explore</a>
+      <a href="index.html" class="small-logo">Back to Home</a>
     </div>
   </nav>
 
@@ -89,6 +88,7 @@
     <p>We will call you very soon BE ABLE ❤️.</p>
   </div>
 
+  <script src="common.js"></script>
   <script>
     document.getElementById('websiteForm').addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -139,7 +139,7 @@
           setTimeout(() => {
             popup.classList.remove('show');
             setTimeout(() => {
-              window.location.href = 'explore.html';
+              window.location.href = 'index.html';
             }, 500);
           }, 3000);
         } else {
@@ -157,6 +157,6 @@
       }
     });
   </script>
-  <script src="explore-overlay.js"></script>
+  
 </body>
 </html> 

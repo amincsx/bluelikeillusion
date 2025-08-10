@@ -17,9 +17,8 @@
   </div>
 
   <nav class="explore-nav">
-    <a href="index-fa.html" class="small-logo">بلولایک ایلوژن</a>
     <div class="nav-links">
-      <a href="explore-fa.html" class="small-logo">بازگشت به اکسپلور</a>
+      <a href="index-fa.html" class="small-logo">بازگشت به خانه</a>
     </div>
   </nav>
 
@@ -83,6 +82,7 @@
     <p>به زودی با شما تماس خواهیم گرفت ❤️</p>
   </div>
 
+  <script src="common.js"></script>
   <script>
     document.getElementById('websiteForm').addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -133,7 +133,7 @@
           setTimeout(() => {
             popup.classList.remove('show');
             setTimeout(() => {
-              window.location.href = 'explore-fa.html';
+              window.location.href = 'index-fa.html';
             }, 500);
           }, 3000);
         } else {
@@ -151,6 +151,6 @@
       }
     });
   </script>
-  <script src="explore-overlay.js"></script>
+  
 </body>
 </html>

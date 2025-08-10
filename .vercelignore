@@ -1,0 +1,6 @@
+# Exclude heavy local project files not needed for deployment
+bluelike illusion project/
+bluelike illusion project/**
+
+
+
