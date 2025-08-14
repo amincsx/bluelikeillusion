@@ -744,6 +744,20 @@ section h2 {
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* Farsi (RTL) input alignment fixes */
+html[lang="fa"] .form-group input,
+html[lang="fa"] .form-group textarea,
+html[lang="fa"] .form-group select {
+  text-align: right;
+}
+
+/* Keep email/URL fields LTR for usability */
+html[lang="fa"] input[type="email"],
+html[lang="fa"] input[type="url"] {
+  direction: ltr;
+  text-align: left;
+}
+
 /* Style the select options */
 option {
   background-color: #1a1a1a;
